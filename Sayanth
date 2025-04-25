@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Sree</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00FF00;
+      font-family: 'Courier New', monospace;
+      padding: 20px;
+    }
+    .terminal {
+      white-space: pre-wrap;
+      overflow: hidden;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal" id="terminal"></div>
+
+  <script>
+    const lines = [
+      "Initializing surprise...",
+      "Loading birthday wishes for Sree...",
+      "Compiling happiness modules...",
+      "Generating love.exe...",
+      "",
+      "Happy Birthday, Sree!",
+      "May your day be as beautiful as your smile.",
+      "With love, from someone who thinks you're amazing.",
+      "",
+      "Process completed: B'day surprise delivered successfully!"
+    ];
+
+    let i = 0;
+    let j = 0;
+    const speed = 50;
+    const terminal = document.getElementById("terminal");
+
+    function typeLine() {
+      if (i < lines.length) {
+        if (j < lines[i].length) {
+          terminal.innerHTML += lines[i].charAt(j);
+          j++;
+          setTimeout(typeLine, speed);
+        } else {
+          terminal.innerHTML += "\n";
+          i++;
+          j = 0;
+          setTimeout(typeLine, 300);
+        }
+      }
+    }
+
+    window.onload = typeLine;
+  </script>
+</body>
+</html>
